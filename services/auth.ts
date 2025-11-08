@@ -1,7 +1,7 @@
 // This file is a placeholder for your authentication service (e.g., Clerk, Auth.js).
 // It simulates common authentication functions.
-import { employees } from '../lib/mockData';
-import { Employee } from '../lib/mockData';
+import { employees } from '@/lib/mockData';
+import { Employee } from '@/lib/mockData';
 
 const CLERK_SECRET_KEY = process.env.CLERK_SECRET_KEY || 'sk_placeholder_...';
 const NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY || 'pk_placeholder_...';

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Employee, Shift, JobRole } from '../lib/mockData';
-import ShiftCell from './ShiftCell';
+import { Employee, Shift, JobRole } from '@/lib/mockData';
+import ShiftCell from '@/components/ShiftCell';
 
 interface ScheduleGridProps {
   employees: Employee[];

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Employee, JobRole } from '../lib/mockData';
+import { Employee, JobRole } from '@/lib/mockData';
 
 interface UserProfileCardProps {
     user: Employee;

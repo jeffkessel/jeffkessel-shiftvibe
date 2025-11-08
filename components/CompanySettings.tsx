@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Company } from '../lib/mockData';
-import { stripeService } from '../services/stripe';
-import CompanyDetailsModal from './CompanyDetailsModal';
+import { Company } from '@/lib/mockData';
+import { stripeService } from '@/services/stripe';
+import CompanyDetailsModal from '@/components/CompanyDetailsModal';
 
 interface CompanySettingsProps {
     company: Company;

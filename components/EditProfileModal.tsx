@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Employee, JobRole } from '../lib/mockData';
-import MultiSelectDropdown from './MultiSelectDropdown';
+import { Employee, JobRole } from '@/lib/mockData';
+import MultiSelectDropdown from '@/components/MultiSelectDropdown';
 
 interface EditProfileModalProps {
     isOpen: boolean;

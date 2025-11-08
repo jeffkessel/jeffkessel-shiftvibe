@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { JobRole } from '../lib/mockData';
+import { JobRole } from '@/lib/mockData';
 
 interface JobRoleFormModalProps {
     isOpen: boolean;

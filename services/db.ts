@@ -1,5 +1,5 @@
 // This file simulates a database connection layer using Drizzle ORM.
-import { employees as mockEmployees, shifts as mockShifts, companies as mockCompanies, jobRoles as mockJobRoles, Shift, Employee, Company, JobRole } from '../lib/mockData';
+import { employees as mockEmployees, shifts as mockShifts, companies as mockCompanies, jobRoles as mockJobRoles, Shift, Employee, Company, JobRole } from '@/lib/mockData';
 
 // --- PRODUCTION DATABASE CLIENT (PLACEHOLDER) ---
 // In a real server environment (like Next.js API routes), you would initialize your
@@ -8,7 +8,7 @@ import { employees as mockEmployees, shifts as mockShifts, companies as mockComp
 /*
 import { neon } from '@neondatabase/serverless';
 import { drizzle } from 'drizzle-orm/neon-http';
-import * as schema from '../db/schema';
+import * as schema from '@/db/schema';
 
 const sql = neon(process.env.DATABASE_URL!);
 // The drizzle client is configured with the schema to be fully type-safe.

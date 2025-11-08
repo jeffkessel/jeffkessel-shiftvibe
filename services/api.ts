@@ -1,9 +1,9 @@
 // This file contains functions that simulate calling a backend API.
 // It uses the mock database service to get data, representing what would happen
 // on the server in a real full-stack application.
-import { db } from './db';
-import { Employee, Shift, Company, JobRole } from '../lib/mockData';
-import { authService } from './auth';
+import { db } from '@/services/db';
+import { Employee, Shift, Company, JobRole } from '@/lib/mockData';
+import { authService } from '@/services/auth';
 
 interface ScheduleData {
     employees: Employee[];

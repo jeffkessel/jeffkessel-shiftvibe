@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shift } from '../lib/mockData';
+import { Shift } from '@/lib/mockData';
 
 interface ShiftCellProps {
   shift: Shift;

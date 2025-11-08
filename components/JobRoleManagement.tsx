@@ -1,5 +1,5 @@
 import React from 'react';
-import { JobRole } from '../lib/mockData';
+import { JobRole } from '@/lib/mockData';
 
 interface JobRoleManagementProps {
     jobRoles: JobRole[];

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Company } from '../lib/mockData';
+import { Company } from '@/lib/mockData';
 
 interface CompanyDetailsModalProps {
     isOpen: boolean;

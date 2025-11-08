@@ -2,8 +2,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { authService } from '../services/auth';
-import { Employee } from '../lib/mockData';
+import { authService } from '@/services/auth';
+import { Employee } from '@/lib/mockData';
 
 interface HeaderProps {
   isAuthenticated: boolean;
