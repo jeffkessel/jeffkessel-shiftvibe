@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import Link from 'next/link';
 import AuthForm from '../components/AuthForm';
 import RoleSelector from '../components/RoleSelector';
 
@@ -29,9 +29,9 @@ const SignUpPage: React.FC = () => {
       footerContent={
         <p className="text-sm text-slate-400">
           Already have an account?{' '}
-          <NavLink to="/auth/login" className="font-medium text-indigo-400 hover:text-indigo-300">
+          <Link href="/auth/login" className="font-medium text-indigo-400 hover:text-indigo-300">
             Log In
-          </NavLink>
+          </Link>
         </p>
       }
     >

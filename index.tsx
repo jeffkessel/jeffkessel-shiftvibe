@@ -1,16 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import './index.css';
+// This file was the entry point for a previous Vite setup.
+// In a Next.js application, the framework handles the entry point and rendering automatically
+// based on the contents of the 'app' directory.
+// This file can be safely deleted.
 
-const rootElement = document.getElementById('root');
-if (!rootElement) {
-  throw new Error("Could not find root element to mount to");
-}
-
-const root = ReactDOM.createRoot(rootElement);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+console.info("ShiftVibe: index.tsx is a legacy file and is not used in the Next.js build.");

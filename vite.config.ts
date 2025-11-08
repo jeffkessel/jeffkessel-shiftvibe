@@ -1,7 +1,5 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+// This file was for a previous Vite setup and is not used by the current Next.js build process.
+// The Next.js configuration is managed in `next.config.mjs`.
+// This file can be safely deleted.
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-})
+console.info("ShiftVibe: vite.config.ts is a legacy file and is not used.");
