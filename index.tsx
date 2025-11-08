@@ -1,6 +1,3 @@
-// This file was the entry point for a previous Vite setup.
-// In a Next.js application, the framework handles the entry point and rendering automatically
-// based on the contents of the 'app' directory.
-// This file can be safely deleted.
-
-console.info("ShiftVibe: index.tsx is a legacy file and is not used in the Next.js build.");
+// This file is a legacy artifact from a previous project structure (Vite).
+// It conflicts with the Next.js App Router and should be deleted.
+// This file is not used in the Next.js build.

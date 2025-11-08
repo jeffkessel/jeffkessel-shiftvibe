@@ -1,3 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/*
+  This file is a legacy artifact from a previous project structure (Vite).
+  It conflicts with the Next.js App Router, which uses app/globals.css.
+  This file is not used in the Next.js build and should be deleted.
+*/
