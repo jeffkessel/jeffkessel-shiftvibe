@@ -1,5 +1,7 @@
+"use client";
 import React, { useState, useEffect, useRef } from 'react';
-import { NavLink } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { authService } from '../services/auth';
 import { Employee } from '../lib/mockData';
 
@@ -7,17 +9,19 @@ interface HeaderProps {
   isAuthenticated: boolean;
 }
 
-const NavLinkItem: React.FC<{ to: string; children: React.ReactNode }> = ({ to, children }) => {
+const NavLinkItem: React.FC<{ href: string; children: React.ReactNode }> = ({ href, children }) => {
+  const pathname = usePathname();
+  const isActive = pathname === href;
   const activeClass = "bg-slate-700 text-white";
   const inactiveClass = "text-slate-300 hover:bg-slate-700 hover:text-white";
   
   return (
-    <NavLink
-      to={to}
-      className={({ isActive }) => `${isActive ? activeClass : inactiveClass} rounded-md px-3 py-2 text-sm font-medium transition-colors`}
+    <Link
+      href={href}
+      className={`${isActive ? activeClass : inactiveClass} rounded-md px-3 py-2 text-sm font-medium transition-colors`}
     >
       {children}
-    </NavLink>
+    </Link>
   );
 };
 
@@ -64,14 +68,13 @@ const UserMenu: React.FC<{ currentUser: Employee | null }> = ({ currentUser }) =
                         <p className="font-medium">{currentUser.name}</p>
                         <p className="text-slate-400 truncate">{currentUser.permissionRole}</p>
                     </div>
-                    <NavLink to="/profile" className="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-600" onClick={() => setIsOpen(false)}>Your Profile</NavLink>
+                    <Link href="/profile" className="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-600" onClick={() => setIsOpen(false)}>Your Profile</Link>
                     <a href="#" className="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-600" onClick={() => console.log('Log out')}>Log Out</a>
                 </div>
             )}
         </div>
     );
 }
-
 
 const Header: React.FC<HeaderProps> = ({ isAuthenticated }) => {
   const [currentUser, setCurrentUser] = useState<Employee | null>(null);
@@ -92,18 +95,18 @@ const Header: React.FC<HeaderProps> = ({ isAuthenticated }) => {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <NavLink to="/" className="text-xl font-bold tracking-wider text-white">ShiftVibe</NavLink>
+              <Link href="/" className="text-xl font-bold tracking-wider text-white">ShiftVibe</Link>
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
                 {isAuthenticated ? (
                   <>
-                    <NavLinkItem to="/dashboard">Dashboard</NavLinkItem>
-                    {canManageCompany && <NavLinkItem to="/company">Company</NavLinkItem>}
+                    <NavLinkItem href="/dashboard">Dashboard</NavLinkItem>
+                    {canManageCompany && <NavLinkItem href="/company">Company</NavLinkItem>}
                   </>
                 ) : (
                   <>
-                    <NavLinkItem to="/">Home</NavLinkItem>
+                    <NavLinkItem href="/">Home</NavLinkItem>
                     <ScrollLinkItem href="/#features">Features</ScrollLinkItem>
                     <ScrollLinkItem href="/#pricing">Pricing</ScrollLinkItem>
                   </>
@@ -117,12 +120,12 @@ const Header: React.FC<HeaderProps> = ({ isAuthenticated }) => {
                 <UserMenu currentUser={currentUser} />
               ) : (
                 <div className="flex items-center space-x-2">
-                    <NavLink to="/auth/login" className="rounded-md px-3 py-2 text-sm font-medium text-slate-300 hover:bg-slate-700 hover:text-white">
+                    <Link href="/auth/login" className="rounded-md px-3 py-2 text-sm font-medium text-slate-300 hover:bg-slate-700 hover:text-white">
                         Log In
-                    </NavLink>
-                    <NavLink to="/auth/signup" className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-medium text-white hover:bg-indigo-500">
+                    </Link>
+                    <Link href="/auth/signup" className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-medium text-white hover:bg-indigo-500">
                         Sign Up
-                    </NavLink>
+                    </Link>
                 </div>
               )}
             </div>
