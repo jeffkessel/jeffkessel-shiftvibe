@@ -10,7 +10,7 @@ interface JobRoleFormModalProps {
 
 const JobRoleFormModal: React.FC<JobRoleFormModalProps> = ({ isOpen, onClose, onSave, jobRole }) => {
     const [name, setName] = useState('');
-    const [department, setDepartment] = useState<'Front of House' | 'Back of House' | 'Bar' | 'Management'>('Front of House');
+    const [department, setDepartment] = useState<JobRole['department']>('Front of House');
     const [isSaving, setIsSaving] = useState(false);
 
     useEffect(() => {
@@ -32,7 +32,7 @@ const JobRoleFormModal: React.FC<JobRoleFormModalProps> = ({ isOpen, onClose, on
         setIsSaving(false);
     };
 
-    const departmentOptions = ['Front of House', 'Back of House', 'Bar', 'Management'];
+    const departmentOptions: JobRole['department'][] = ['Front of House', 'Back of House', 'Bar', 'Management'];
 
     return (
         <div className="fixed inset-0 bg-black bg-opacity-70 z-50 flex justify-center items-center p-4">
@@ -47,7 +47,7 @@ const JobRoleFormModal: React.FC<JobRoleFormModalProps> = ({ isOpen, onClose, on
                             </div>
                             <div>
                                 <label htmlFor="department" className="block text-sm font-medium text-slate-300">Department</label>
-                                <select name="department" id="department" value={department} onChange={(e) => setDepartment(e.target.value as any)} className="mt-1 block w-full appearance-none rounded-md border border-slate-600 bg-slate-700 px-3 py-2 text-white" required>
+                                <select name="department" id="department" value={department} onChange={(e) => setDepartment(e.target.value as JobRole['department'])} className="mt-1 block w-full appearance-none rounded-md border border-slate-600 bg-slate-700 px-3 py-2 text-white" required>
                                     {departmentOptions.map(opt => <option key={opt} value={opt}>{opt}</option>)}
                                 </select>
                             </div>

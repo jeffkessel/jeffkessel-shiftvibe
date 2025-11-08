@@ -65,14 +65,14 @@ const EmployeeFormModal: React.FC<EmployeeFormModalProps> = ({ isOpen, onClose, 
                             
                             <div>
                                 <label htmlFor="permissionRole" className="block text-sm font-medium text-slate-300">Permission Role</label>
-                                <select name="permissionRole" id="permissionRole" value={permissionRole} onChange={(e) => setPermissionRole(e.target.value as any)} className="mt-1 block w-full appearance-none rounded-md border border-slate-600 bg-slate-700 px-3 py-2 text-white" required>
+                                <select name="permissionRole" id="permissionRole" value={permissionRole} onChange={(e) => setPermissionRole(e.target.value as Employee['permissionRole'])} className="mt-1 block w-full appearance-none rounded-md border border-slate-600 bg-slate-700 px-3 py-2 text-white" required>
                                     {permissionRoleOptions.map(opt => <option key={opt} value={opt}>{opt}</option>)}
                                 </select>
                             </div>
 
                             <div>
                                 <label htmlFor="location" className="block text-sm font-medium text-slate-300">Location</label>
-                                <select name="location" id="location" value={location} onChange={(e) => setLocation(e.target.value as any)} className="mt-1 block w-full appearance-none rounded-md border border-slate-600 bg-slate-700 px-3 py-2 text-white" required>
+                                <select name="location" id="location" value={location} onChange={(e) => setLocation(e.target.value as Employee['location'])} className="mt-1 block w-full appearance-none rounded-md border border-slate-600 bg-slate-700 px-3 py-2 text-white" required>
                                     {locationOptions.map(opt => <option key={opt} value={opt}>{opt}</option>)}
                                 </select>
                             </div>
