@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "ShiftVibe",
   description: "Manage Shifts, Vibe Higher.",
+  manifest: "/manifest.json",
 };
 
 // Hardcoded auth status for prototype. In a real app, this would come from a session.
