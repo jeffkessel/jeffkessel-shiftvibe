@@ -45,7 +45,8 @@ const DashboardPage: React.FC = () => {
       
       // An employee matches the department if any of their roles are in that department.
       const employeeDepartments = new Set(employee.jobRoleIds.map(id => jobRoles.find(r => r.id === id)?.department));
-      const departmentMatch = filters.department === 'All' || employeeDepartments.has(filters.department);
+      // FIX: Cast filters.department to the correct type to satisfy Set.has().
+      const departmentMatch = filters.department === 'All' || employeeDepartments.has(filters.department as JobRole['department']);
       
       // An employee matches the role if they have that role assigned.
       const employeeJobRoleNames = new Set(employee.jobRoleIds.map(id => jobRoles.find(r => r.id === id)?.name));

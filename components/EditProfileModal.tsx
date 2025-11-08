@@ -56,7 +56,8 @@ const EditProfileModal: React.FC<EditProfileModalProps> = ({ isOpen, onClose, us
                            
                             <div>
                                 <label htmlFor="location" className="block text-sm font-medium text-slate-300">Location</label>
-                                <select name="location" id="location" value={location} onChange={(e) => setLocation(e.target.value)} className="mt-1 block w-full appearance-none rounded-md border border-slate-600 bg-slate-700 px-3 py-2 text-white placeholder-slate-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" required>
+                                {/* FIX: Cast e.target.value to the correct type to match the state's inferred type. */}
+                                <select name="location" id="location" value={location} onChange={(e) => setLocation(e.target.value as Employee['location'])} className="mt-1 block w-full appearance-none rounded-md border border-slate-600 bg-slate-700 px-3 py-2 text-white placeholder-slate-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" required>
                                     {locationOptions.map(opt => <option key={opt} value={opt}>{opt}</option>)}
                                 </select>
                             </div>
