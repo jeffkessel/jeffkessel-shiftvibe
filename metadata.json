@@ -1,0 +1,5 @@
+{
+  "name": "ShiftVibe",
+  "description": "A progressive web app designed to scaffold a working prototype for a shift management system. It includes a proper project structure, placeholder database connections, and is ready for GitHub and Vercel integration.",
+  "requestFramePermissions": []
+}
